@@ -1,26 +1,27 @@
 import java.util.*;
 
 public final class Student{
-    private String name;
-    private List<String> courses;
-    
-    Student(String name, List<String> courses){
+    private final String name;
+    private final List<String> courses;
+
+    TrafficLight(String name, List<String> courses){
         this.name = name;
-        this.courses = courses;
+        this.courses = new ArrayList<>(courses);
     }
-    
+
     public String getName(){
         return name;
     }
-    
+
     public List<String> getCourses(){
         return new ArrayList<>(courses);
     }
-    
+
     public String toString(){
-        return "name:" + name + "Courses List lenght:" + courses.size();
+        return "name:" + name + " \nCourses List length:" + courses.size();
     }
-    
+
+
 }
 
 public static void Main(String[] args) {
