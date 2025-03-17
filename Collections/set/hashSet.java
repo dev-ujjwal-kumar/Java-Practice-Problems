@@ -10,6 +10,11 @@ public class hashSet {
         set.add(3);
         set.add(4);
 
+        Iterator<Integer> setIterator = set.iterator();
+        while(setIterator.hasNext()){
+            System.out.println(setIterator.next());
+
+        }
         set.remove(4);
 
         System.out.println(set.contains(1));
