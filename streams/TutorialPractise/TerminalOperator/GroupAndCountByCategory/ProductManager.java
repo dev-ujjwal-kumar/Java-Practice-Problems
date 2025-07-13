@@ -25,10 +25,25 @@ public class ProductManager {
         Map<String, Long> categoryCountUsingLE = products.stream()
                                             .collect(Collectors.groupingBy(product -> product.getCategory(),
                                             Collectors.counting()));
-
+        
+        Map<String, List<Product>> productCategory = products.stream()
+                                            .collect(Collectors.groupingBy(Product::getCategory));
+        
+        //  list of all products which is greater than and less than 50K.
+        Map<Boolean, List<Product>> partationedByPrice = products.stream()
+                                            .collect(Collectors.partitioningBy(product -> product.getPrice() < 50000));
+        
+        
+        System.out.println(partationedByPrice);
+        
+        productCategory.forEach((category, productList) -> {
+                System.out.println("Category: " + category);
+                productList.forEach(System.out::println);
+            });
 
         System.out.println(categoryCount);
         
+
         System.out.println(categoryCountUsingLE);
     }
     

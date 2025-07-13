@@ -12,4 +12,8 @@ public class Product {
     public String getCategory(){
         return category;
     }
+
+    public int getPrice(){
+        return price;
+    }
 }
