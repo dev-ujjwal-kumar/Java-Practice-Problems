@@ -10,6 +10,5 @@ public class MinAndMax {
         
         System.out.println(mini.get());
     }
-
     
 }
