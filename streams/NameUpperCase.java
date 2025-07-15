@@ -7,7 +7,8 @@ public class NameUpperCase {
         List<String> nameList = Arrays.asList("Alice", "bob", "Andrew", "Charlie", "adam");
         
         List<String> filteredList = nameList.stream()
-                                        .filter(i -> ! (i.substring(0, 1).equalsIgnoreCase("A")))
+                                        // .filter(i -> ! (i.substring(0, 1).equalsIgnoreCase("A")))
+                                        .filter(i -> ! (i.startsWith("A") || i.startsWith("a")))
                                         .map(s -> s.toUpperCase())
                                         .collect(Collectors.toList());
 
