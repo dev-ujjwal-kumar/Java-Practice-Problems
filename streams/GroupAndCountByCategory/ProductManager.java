@@ -2,8 +2,11 @@
 // Each product has a name, category, and price. 
 // Use Java Streams to group the products by category and count how many products are in each category.
 
+import java.lang.StackWalker.Option;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ProductManager {
@@ -42,9 +45,19 @@ public class ProductManager {
             });
 
         System.out.println(categoryCount);
-        
+
 
         System.out.println(categoryCountUsingLE);
+
+        // Use Java Streams to group the products by department, 
+        // and for each department, find the prodct with the highest salary.
+        
+        Map<String , Optional<Product>> highestPricePerCategory = products.stream()
+                                                            .collect(Collectors.groupingBy(Product::getCategory,
+                                                            Collectors.maxBy(Comparator.comparingInt(Product::getPrice))));
+        
+        System.out.println(highestPricePerCategory);
+    
     }
     
 }
