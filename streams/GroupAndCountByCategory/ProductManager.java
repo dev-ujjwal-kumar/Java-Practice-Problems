@@ -57,6 +57,13 @@ public class ProductManager {
                                                             Collectors.maxBy(Comparator.comparingInt(Product::getPrice))));
         
         System.out.println(highestPricePerCategory);
+
+        // Using Java Streams, group the products by their category and compute the average price for each category.
+        Map<String, Double> averageProduct = products.stream() 
+                                            .collect(Collectors.groupingBy(Product::getCategory, 
+                                            Collectors.averagingInt(Product::getPrice)));
+                                            
+        System.out.println(averageProduct);
     
     }
     

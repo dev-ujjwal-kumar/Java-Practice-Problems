@@ -1,9 +1,6 @@
 // Use Streams to:
-
 // Flatten the list
-
 // Remove duplicates
-
 // Count how many unique technologies are present
 
 import java.util.Collection;
