@@ -64,6 +64,15 @@ public class ProductManager {
                                             Collectors.averagingInt(Product::getPrice)));
                                             
         System.out.println(averageProduct);
+
+        // top 3 most expensive product
+        List<String> productList = products.stream()
+                                    .sorted(Comparator.comparingInt(Product::getPrice).reversed())
+                                    .limit(3)
+                                    .map(Product::getName)
+                                    .collect(Collectors.toList());
+
+        System.out.println(productList);
     
     }
     
