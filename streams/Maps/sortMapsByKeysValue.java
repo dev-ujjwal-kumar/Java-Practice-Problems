@@ -18,12 +18,16 @@ public class sortMapsByKeysValue {
                                             .stream()
                                             .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
                                             .collect(Collectors.toMap(
-                                                Map.Entry :: getKey,
-                                                Map.Entry::getValue,
-                                                (e1, e2) -> e1, 
-                                                LinkedHashMap::new));
+                                                Map.Entry :: getKey,    // mapping key
+                                                Map.Entry::getValue,    // mapping values
+                                                (e1, e2) -> e1,         // merger function in case of duplicate keys
+                                                LinkedHashMap::new));   // collecting it to new Map
         
         System.out.println(sortedByKey);
+
+// In above case as we are converting a Map to entry set. So keys are unique.
+// But Collectors.toMap(..., ..., ..., ...) requires a merge function, even if it's never used.
+// This is just how the method signature is designed — Java can’t "guess" your input is safe.
 
         //sort by value
         Map<String, Integer> sortedByValue = mp.entrySet()
@@ -36,8 +40,6 @@ public class sortMapsByKeysValue {
                                                 LinkedHashMap::new));
                                         
         System.out.println(sortedByValue);
-
-
 
     }
     
