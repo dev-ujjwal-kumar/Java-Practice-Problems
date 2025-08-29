@@ -2,7 +2,7 @@
 // Count how many times each word appears using Java Streams and store the result in a Map<String, Long>
 
 import java.util.List;
-import java.util.Map;
+import java.util.Map    ;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
