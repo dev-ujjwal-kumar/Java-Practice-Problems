@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.list;
 
 public final class Student{
     private final String name;
