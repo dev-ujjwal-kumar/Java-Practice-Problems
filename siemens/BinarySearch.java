@@ -13,6 +13,6 @@ class Solution {
                 start = mid+1;
             mid = start+(end-start)/2;
         }
-        return -1;        
+        return null;        
     }
 }
