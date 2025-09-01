@@ -7,7 +7,7 @@
 //        ❌ Not suitable if instance creation is expensive and might never be needed.
 
 public class EagerInitilization{
-     private static final EagerInitilization eagerInitilization= new EagerInitilization(); //Creating the instance at the calss loading
+    private static final EagerInitilization eagerInitilization= new EagerInitilization(); //Creating the instance at the calss loading
 
     private eagerInitilization(){} //making constructor as private
 
